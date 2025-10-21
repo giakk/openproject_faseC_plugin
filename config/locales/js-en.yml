@@ -1,0 +1,16 @@
+en:
+  js:
+    fase_c:
+      title: "Phase C Data"
+      collaudo_impianto: "System testing Certification Entity and report release"
+      libretto_impianto: "System booklet"
+      dichiarazione_ce: "Our CE declaration"
+      contratto_manutenzione: "Maintenance contract stipulation"
+      incarico_ente_certificato: "Certified Entity assignment"
+      numero_matricola: "Serial number release"
+      fine_lavori_pratica: "End of works municipal procedure and testing"
+      variazione_catastale: "Cadastral variation only for external systems"
+      save: "Save"
+      saved_successfully: "Data saved successfully"
+      save_error: "Error saving data"
+      no_permission: "You don't have permission to edit this data"

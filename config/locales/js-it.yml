@@ -1,0 +1,16 @@
+it:
+  js:
+    fase_c:
+      title: "Dati Fase C"
+      collaudo_impianto: "Collaudo impianto Ente Cert. e rilascio verbale"
+      libretto_impianto: "Libretto impianto"
+      dichiarazione_ce: "Nostra dichiarazione CE"
+      contratto_manutenzione: "Stipula contratto di manutenzione"
+      incarico_ente_certificato: "Incarico Ente Certificato"
+      numero_matricola: "Rilascio numero di matricola"
+      fine_lavori_pratica: "Fine lavori pratica Comunale e collaudo"
+      variazione_catastale: "Variazione catastale solo per imp. esterni"
+      save: "Salva"
+      saved_successfully: "Dati salvati con successo"
+      save_error: "Errore durante il salvataggio"
+      no_permission: "Non hai i permessi per modificare questi dati"

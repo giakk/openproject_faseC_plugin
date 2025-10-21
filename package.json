@@ -1,0 +1,23 @@
+
+{
+  "name": "openproject-fase_c_plugin",
+  "version": "1.0.0",
+  "description": "Plugin per gestire i dati Fase C in OpenProject",
+  "main": "frontend/module/main.ts",
+  "scripts": {
+    "build": "echo 'Build handled by OpenProject main application'",
+    "test": "echo 'No tests specified yet'"
+  },
+  "keywords": [
+    "openproject",
+    "plugin",
+    "fase-c"
+  ],
+  "author": "Riccardo Giacchino",
+  "license": "GPL-3.0",
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/forms": "^14.0.0"
+  }
+}
