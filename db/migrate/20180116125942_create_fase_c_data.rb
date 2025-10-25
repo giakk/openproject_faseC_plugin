@@ -1,4 +1,4 @@
-class CreateFaseCData < ActiveRecord::Migration[7.0]
+class CreateFaseCData < ActiveRecord::Migration[7.1]
   def change
     create_table :fase_c_data do |t|
       t.references :project, null: false, foreign_key: true, index: { unique: true }
