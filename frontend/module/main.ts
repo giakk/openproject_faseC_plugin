@@ -18,4 +18,4 @@ export class PluginModule {
   }
 }
 
-OpenProjectPluginContext.register('openproject-fase_c-plugin', PluginModule);
+OpenProjectPluginContext.register('openproject_fase_c-plugin', PluginModule);
