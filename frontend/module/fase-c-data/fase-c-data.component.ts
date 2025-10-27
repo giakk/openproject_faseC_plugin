@@ -4,6 +4,8 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { ToastService } from 'core-app/shared/components/toaster/toast.service';
@@ -25,6 +27,8 @@ interface FaseCData {
 
 @Component({
   selector: 'fase-c-data',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './fase-c-data.component.html',
   styleUrls: ['./fase-c-data.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,

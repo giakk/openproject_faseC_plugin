@@ -1,5 +1,4 @@
 import { Injector, NgModule } from '@angular/core';
-import { OpenProjectPluginContext } from 'core-app/features/plugins/plugin-context';
 import { FaseCDataModule } from './fase-c-data/fase-c-data.module';
 
 export function initializePlugin(injector: Injector) {
@@ -17,5 +16,3 @@ export class PluginModule {
     initializePlugin(injector);
   }
 }
-
-OpenProjectPluginContext.register('openproject_fase_c-plugin', PluginModule);

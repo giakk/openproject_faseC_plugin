@@ -5,18 +5,20 @@ module OpenProject
 
       include OpenProject::Plugins::ActsAsOpEngine
 
-      register 'openproject_fase_c_plugin',
+      register 'openproject-fase_c_plugin',
                author_url: 'https://github.com/yourusername',
                bundled: false do
         
         project_module :fase_c_module do
           permission :view_fase_c_data,
                      { fase_c_data: [:show] },
-                     project_module: :fase_c_module
+                     permissible_on: :project,
+                     contract_actions: { fase_c_data: [:show] }
           
           permission :edit_fase_c_data,
                      { fase_c_data: [:update] },
-                     project_module: :fase_c_module,
+                     permissible_on: :project,
+                     contract_actions: { fase_c_data: [:update] },
                      require: :member
         end
 
@@ -25,7 +27,7 @@ module OpenProject
              { controller: '/fase_c_data', action: 'show' },
              caption: 'Fase C',
              after: :gantt,
-             icon: 'icon-checkmark',
+             icon: 'check-circle',
              if: ->(project) { 
                project.module_enabled?(:fase_c_module)
              }

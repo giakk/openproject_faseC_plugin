@@ -1,6 +1,8 @@
 class FaseCDataController < ApplicationController
+  no_authorization_required! :show, :update
+  
   before_action :find_project_by_project_id
-  before_action :authorize
+  before_action :check_permissions
   before_action :find_or_initialize_fase_c_datum
 
   def show
@@ -8,6 +10,11 @@ class FaseCDataController < ApplicationController
   end
 
   def update
+    unless can_edit?
+      render json: { error: 'Not authorized' }, status: :forbidden
+      return
+    end
+
     @fase_c_datum.attributes = permitted_params
     
     if @fase_c_datum.save
@@ -46,6 +53,19 @@ class FaseCDataController < ApplicationController
     User.current.allowed_in_project?(:edit_fase_c_data, @project)
   end
 
+  def can_view?
+    User.current.admin? ||
+    User.current.allowed_in_project?(:view_fase_c_data, @project)
+  end
+
+  def check_permissions
+    unless can_view?
+      render_403
+      return false
+    end
+    true
+  end
+
   def permitted_params
     params.require(:fase_c_datum).permit(
       :collaudo_impianto,
@@ -57,14 +77,5 @@ class FaseCDataController < ApplicationController
       :fine_lavori_pratica,
       :variazione_catastale
     )
-  end
-
-  def authorize
-    case action_name
-    when 'show'
-      authorize_for('fase_c_data', 'show')
-    when 'update'
-      authorize_for('fase_c_data', 'update')
-    end
   end
 end
