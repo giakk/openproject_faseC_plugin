@@ -35,6 +35,14 @@ module OpenProject
         app.config.paths['config/locales'] << File.expand_path('../../../config/locales', __dir__)
       end
 
+      initializer 'fase_c_plugin.append_migrations' do |app|
+        unless app.root.to_s.match?(root.to_s)
+          config.paths['db/migrate'].expanded.each do |expanded_path|
+            app.config.paths['db/migrate'] << expanded_path
+          end
+        end
+      end
+
       config.to_prepare do
         # Aggiungi patches se necessario
       end
